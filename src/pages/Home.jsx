@@ -248,6 +248,7 @@ export default function Home() {
             <span>// EXPLORE</span>
           </div>
 
+          {/* 데스크톱: 카드 그리드 */}
           <div className={styles.cardGrid}>
             {cards.map((card, i) => (
               <button
@@ -273,6 +274,23 @@ export default function Home() {
               </button>
             ))}
           </div>
+
+          {/* 모바일: 텍스트 리스트 */}
+          <ul className={styles.mobileList}>
+            {cards.map((card) => (
+              <li key={card.id}>
+                <button
+                  className={styles.mobileListItem}
+                  style={{ '--accent': card.accent }}
+                  onClick={() => navigate(card.path)}
+                >
+                  <span className={styles.mobileListNum}>{card.id}</span>
+                  <span className={styles.mobileListTitle}>{card.title}</span>
+                  <span className={styles.mobileListArrow} style={{ color: card.accent }}>→</span>
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
