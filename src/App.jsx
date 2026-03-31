@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import GetStarted from './pages/GetStarted'
+import Deploy from './pages/Deploy'
 import Skills from './pages/Skills'
 import HowTo from './pages/HowTo'
 import Caution from './pages/Caution'
@@ -51,6 +52,7 @@ export default function App() {
         <Route path="/how-to" element={<HowTo />} />
         <Route path="/caution" element={<Caution />} />
         <Route path="/token-context" element={<TokenContext />} />
+        <Route path="/deploy" element={<Deploy />} />
       </Routes>
     </BrowserRouter>
   )

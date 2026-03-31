@@ -49,6 +49,15 @@ const cards = [
     accent: '#a78bfa',
     tag: '핵심 개념',
   },
+  {
+    id: '06',
+    path: '/deploy',
+    label: 'DEPLOY',
+    title: '배포하기',
+    desc: 'GitHub Pages와 Vercel로 배포하는 방법. Vercel을 써야 하는 이유와 장점.',
+    accent: '#39d353',
+    tag: '배포',
+  },
 ]
 
 // 타이핑 효과 훅

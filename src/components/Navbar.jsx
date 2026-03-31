@@ -9,6 +9,7 @@ const links = [
   { to: '/how-to', label: '사용법' },
   { to: '/caution', label: '주의사항' },
   { to: '/token-context', label: '토큰 & 컨텍스트' },
+  { to: '/deploy', label: '배포하기' },
 ]
 
 export default function Navbar() {
