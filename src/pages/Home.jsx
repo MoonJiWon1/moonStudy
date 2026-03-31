@@ -133,20 +133,16 @@ export default function Home() {
   const [visible, setVisible] = useState(false)
   const isMobile = window.innerWidth <= 480
 
-  const { displayed: line1, done: done1 } = useTypewriter(
-    isMobile ? '' : '> CLAUDE CODE', 80, 300
-  )
-  const { displayed: line2, done: done2 } = useTypewriter(
-    '바이브 코딩', 100, isMobile ? 300 : 1400
-  )
+  const { displayed: line1, done: done1 } = useTypewriter('> CLAUDE CODE', 80, 300)
+  const { displayed: line2, done: done2 } = useTypewriter('바이브 코딩', 100, 1500)
   const { displayed: line3 } = useTypewriter(
     isMobile ? 'AI와 함께하는 코딩' : 'AI와 함께 흐르듯 코딩하는 새로운 패러다임.',
     40,
-    isMobile ? 900 : (done1 ? 2200 : 99999)
+    done2 ? 300 : 99999
   )
 
   useEffect(() => {
-    const t = setTimeout(() => setVisible(true), isMobile ? 1200 : 2800)
+    const t = setTimeout(() => setVisible(true), isMobile ? 2600 : 2800)
     return () => clearTimeout(t)
   }, [])
 
