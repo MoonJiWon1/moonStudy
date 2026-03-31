@@ -446,7 +446,7 @@
   .heroText { gap: 8px; }
   .codeLine { display: none; }
   .title { font-size: 2rem; min-height: auto; }
-  .subtitle { font-size: 0.8rem; line-height: 1.5; max-width: 100%; min-height: auto; }
+  .subtitle { font-size: 0.8rem; line-height: 1.5; max-width: 100%; min-height: 1.2em; white-space: nowrap; overflow: hidden; }
 
   /* 배지: 가로 한 줄 스크롤 */
   .badges {
