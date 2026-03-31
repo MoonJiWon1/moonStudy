@@ -444,7 +444,15 @@
     justify-content: flex-start;
   }
   .heroText { gap: 8px; }
-  .title { font-size: 2rem; min-height: auto; }
+  .title {
+    font-size: 2rem;
+    min-height: 2.2rem;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: #fff;
+    background-clip: unset;
+    color: #fff;
+  }
   .subtitle { font-size: 0.8rem; line-height: 1.5; max-width: 100%; min-height: 1.2em; white-space: nowrap; }
 
   /* 배지: 가로 한 줄 스크롤 */
