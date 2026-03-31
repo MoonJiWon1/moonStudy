@@ -424,7 +424,7 @@
 /* ─── 반응형 ─── */
 @media (max-width: 900px) {
   .heroInner {
-    grid-template-columns: 0 1fr;
+    grid-template-columns: 1fr;
     gap: 32px;
   }
   .sideBar { display: none; }
