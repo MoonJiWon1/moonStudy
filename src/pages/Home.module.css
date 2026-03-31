@@ -432,23 +432,68 @@
 }
 
 @media (max-width: 480px) {
+  /* 히어로 */
   .hero {
-    padding: 80px 20px 40px;
+    padding: 72px 20px 24px;
     min-height: auto;
     justify-content: flex-start;
   }
-  .heroText { gap: 10px; }
-  .codeLine { display: none; }        /* 모바일에선 > CLAUDE CODE 줄 숨김 */
-  .title { font-size: 2.2rem; min-height: auto; }
+  .heroText { gap: 8px; }
+  .codeLine { display: none; }
+  .title { font-size: 2rem; min-height: auto; }
   .subtitle {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 1.5;
     max-width: 100%;
     min-height: auto;
   }
-  .badges { margin-top: 4px; }
-  .badge { font-size: 0.62rem; padding: 3px 8px; }
+  /* 배지: 가로 한 줄, 넘치면 스크롤 */
+  .badges {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-top: 4px;
+    gap: 6px;
+    padding-bottom: 4px;
+  }
+  .badges::-webkit-scrollbar { display: none; }
+  .badge { font-size: 0.6rem; padding: 3px 8px; white-space: nowrap; flex-shrink: 0; }
+
+  /* 카드 섹션: 가로 스크롤 */
   .scrollHint { display: none; }
-  .cards { padding: 32px 20px 60px; }
+  .cards { padding: 20px 0 48px; }
+  .cardsInner { padding: 0; }
+  .sectionLabel { padding: 0 20px; margin-bottom: 14px; }
+  .cardGrid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 10px;
+    padding: 4px 20px 12px;
+    /* 스냅 스크롤 */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cardGrid::-webkit-scrollbar { display: none; }
+  .card {
+    min-width: 200px;
+    max-width: 200px;
+    padding: 16px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+  .cardHeader { margin-bottom: 10px; }
+  .cardTitle { font-size: 1rem; margin-bottom: 6px; }
+  .cardDesc { font-size: 0.7rem; margin-bottom: 12px;
+    /* 모바일 카드에서 설명 2줄로 제한 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .cardFooter { font-size: 0.65rem; }
+
   .footerInner { flex-direction: column; gap: 8px; text-align: center; }
 }
