@@ -432,8 +432,23 @@
 }
 
 @media (max-width: 480px) {
-  .hero { padding: 90px 20px 60px; }
-  .cards { padding: 60px 20px 80px; }
-  .title { font-size: 2.4rem; }
+  .hero {
+    padding: 80px 20px 40px;
+    min-height: auto;
+    justify-content: flex-start;
+  }
+  .heroText { gap: 10px; }
+  .codeLine { display: none; }        /* 모바일에선 > CLAUDE CODE 줄 숨김 */
+  .title { font-size: 2.2rem; min-height: auto; }
+  .subtitle {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    max-width: 100%;
+    min-height: auto;
+  }
+  .badges { margin-top: 4px; }
+  .badge { font-size: 0.62rem; padding: 3px 8px; }
+  .scrollHint { display: none; }
+  .cards { padding: 32px 20px 60px; }
   .footerInner { flex-direction: column; gap: 8px; text-align: center; }
 }
