@@ -57,6 +57,13 @@ body {
 
 a, button { cursor: none; }
 
+/* 터치 기기에서 커스텀 커서 숨김 */
+@media (pointer: coarse) {
+  .cursor, .cursor-ring { display: none; }
+  body { cursor: auto; }
+  a, button { cursor: pointer; }
+}
+
 /* 스크롤바 */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }

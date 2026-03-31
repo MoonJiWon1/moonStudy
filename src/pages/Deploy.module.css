@@ -504,8 +504,16 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 6px;
+    margin-bottom: 20px;
   }
   .stepItemTitle { display: none; }
   .advantageGrid { grid-template-columns: 1fr; }
   .inner { padding: 0 20px; }
+  .code { font-size: 0.72rem; }
+  .conclusionInner { flex-direction: column; gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  .whyTitle { font-size: 1.3rem; }
+  .topTab { padding: 12px 14px; font-size: 0.72rem; }
 }

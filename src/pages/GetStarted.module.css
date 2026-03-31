@@ -358,18 +358,24 @@
 
 /* 반응형 */
 @media (max-width: 768px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
+  .layout { grid-template-columns: 1fr; }
   .stepList {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 6px;
+    margin-bottom: 20px;
   }
-  .stepItem {
-    padding: 8px 10px;
-  }
+  .stepItem { padding: 8px 10px; }
   .stepItemTitle { display: none; }
   .inner { padding: 0 20px; }
   .methodCards { gap: 8px; }
+  .methodCard { padding: 12px 14px; }
+  .stepDetailNum { font-size: 1.4rem; }
+  .stepDetailTitle { font-size: 1.1rem; }
+  .code { font-size: 0.72rem; }
+}
+
+@media (max-width: 480px) {
+  .methodCards { flex-direction: column; }
+  .methodCard { width: 100%; }
 }

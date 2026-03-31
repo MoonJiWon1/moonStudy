@@ -138,4 +138,6 @@
 @media (max-width: 768px) {
   .links { display: none; }
   .burger { display: flex; }
+  .inner { padding: 0 20px; }
+  .logo { font-size: 1.1rem; }
 }

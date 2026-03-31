@@ -70,7 +70,7 @@
 /* 기초 카드 */
 .cardRow {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
   margin-bottom: 28px;
 }
@@ -236,7 +236,7 @@
 /* 팁 그리드 */
 .tipGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 14px;
 }
 
@@ -292,7 +292,15 @@
 }
 
 /* 반응형 */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .inner { padding: 0 20px; }
+  .cardRow { grid-template-columns: 1fr; }
+  .tipGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .tipGrid { grid-template-columns: 1fr; }
   .ctxSegLabel { display: none; }
+  .tokenRow { gap: 4px; }
+  .token { font-size: 0.72rem; padding: 3px 6px; }
 }

@@ -282,16 +282,14 @@
 
 /* 반응형 */
 @media (max-width: 768px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
+  .layout { grid-template-columns: 1fr; }
   .stepNav {
     position: static;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
     border-left: none;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .stepBtn {
     border: 1px solid var(--border);
@@ -299,6 +297,14 @@
     border-radius: 4px;
     padding: 8px 12px;
   }
+  .stepTitle { display: none; }
   .progressLine { display: none; }
   .inner { padding: 0 20px; }
+  .detailNum { font-size: 1.4rem; }
+  .detailTitle { font-size: 1.2rem; }
+  .code { font-size: 0.72rem; }
+}
+
+@media (max-width: 480px) {
+  .codeBlock { border-radius: 6px; }
 }

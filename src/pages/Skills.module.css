@@ -105,6 +105,10 @@
   margin-bottom: 48px;
 }
 
+@media (max-width: 900px) {
+  .skillGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* 스킬 카드 */
 .skillCard {
   position: relative;
@@ -242,4 +246,5 @@
   .skillGrid { grid-template-columns: 1fr; }
   .tabInner { padding: 0 20px; }
   .inner { padding: 0 20px; }
+  .installCode { font-size: 0.6rem; }
 }
