@@ -1,0 +1,375 @@
+.page {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* 헤더 */
+.header {
+  padding: 60px 0 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.label {
+  font-size: 0.7rem;
+  color: #39d353;
+  opacity: 0.6;
+  letter-spacing: 0.2em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+/* 방법 선택 카드 */
+.methodCards {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.methodCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: none;
+  transition: all 0.2s ease;
+}
+
+.methodCard:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.methodCard.methodActive {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.methodCard.methodActive .methodLabel {
+  color: var(--accent);
+}
+
+.methodIcon {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.methodLabel {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+/* 본문 */
+.content {
+  padding: 48px 0 80px;
+}
+
+/* 선택된 방법 헤더 */
+.methodHeader {
+  margin-bottom: 36px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.methodBadge {
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+.methodTitle {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.methodDesc {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* 스텝 레이아웃 */
+.layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 32px;
+}
+
+/* 스텝 리스트 */
+.stepList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: none;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.stepItem:hover {
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.stepItem.stepActive {
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+}
+
+.stepItem.stepDone .stepCircle {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.stepCircle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.stepItem.stepActive .stepCircle {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.stepItemTitle {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.stepItem.stepActive .stepItemTitle {
+  color: var(--text);
+}
+
+/* 스텝 상세 */
+.stepDetail {
+  animation: slideIn 0.25s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.stepDetailHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.stepDetailNum {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  opacity: 0.35;
+  line-height: 1;
+}
+
+.stepDetailTitle {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.stepDetailDesc {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* 코드 블록 */
+.codeBlock {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.codeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.codeLang {
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  opacity: 0.35;
+  letter-spacing: 0.1em;
+}
+
+.copyBtn {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  background: none;
+  border: 1px solid;
+  border-color: currentColor;
+  opacity: 0.6;
+  padding: 3px 8px;
+  border-radius: 2px;
+  cursor: none;
+  transition: opacity 0.2s;
+}
+
+.copyBtn:hover { opacity: 1; }
+
+.code {
+  padding: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* 이전/다음 */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navBtn {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  background: none;
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: none;
+  transition: all 0.2s;
+}
+
+.navBtn:hover:not(:disabled) {
+  color: var(--accent, var(--cyan));
+  border-color: color-mix(in srgb, var(--accent, var(--cyan)) 40%, transparent);
+}
+
+.navBtn:disabled {
+  opacity: 0.2;
+}
+
+.navBtn.navDone {
+  color: var(--green);
+  border-color: rgba(57, 211, 83, 0.3);
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.navPager {
+  flex: 1;
+  text-align: center;
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  opacity: 0.35;
+}
+
+/* 팁 */
+.tip {
+  display: flex;
+  gap: 12px;
+  background: color-mix(in srgb, var(--accent) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: 6px;
+  padding: 16px 20px;
+}
+
+.tipIcon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.tip p {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .stepList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .stepItem {
+    padding: 8px 10px;
+  }
+  .stepItemTitle { display: none; }
+  .inner { padding: 0 20px; }
+  .methodCards { gap: 8px; }
+}

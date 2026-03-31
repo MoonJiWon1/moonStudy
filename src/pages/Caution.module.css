@@ -1,0 +1,235 @@
+.page {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.header {
+  padding: 60px 0 36px;
+  border-bottom: 1px solid var(--border);
+}
+
+.label {
+  font-size: 0.7rem;
+  color: #f59e0b;
+  opacity: 0.6;
+  letter-spacing: 0.2em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* 레벨 요약 */
+.levelSummary {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.levelBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.levelDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color);
+  opacity: 0.7;
+}
+
+.levelCount {
+  font-family: var(--font-mono);
+  color: var(--color);
+  opacity: 0.8;
+}
+
+/* 필터 바 */
+.filterBar {
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+  position: sticky;
+  top: 64px;
+  background: rgba(8, 11, 15, 0.95);
+  backdrop-filter: blur(20px);
+  z-index: 10;
+}
+
+.filterBar .inner {
+  display: flex;
+  gap: 4px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.filterBtn {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  background: none;
+  border: 1px solid transparent;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: none;
+  transition: all 0.2s;
+}
+
+.filterBtn:hover {
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.filterBtn.filterActive {
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.06);
+}
+
+/* 목록 */
+.content {
+  padding: 40px 0 80px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  overflow: hidden;
+  animation: itemIn 0.4s ease both;
+  transition: border-color 0.2s;
+}
+
+@keyframes itemIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.item:hover {
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* 왼쪽 상단 바 */
+.itemBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--accent);
+  opacity: 0.5;
+}
+
+.itemLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 2px;
+}
+
+.itemIcon {
+  font-size: 1.5rem;
+}
+
+.itemLevel {
+  font-size: 0.6rem;
+  border: 1px solid;
+  padding: 2px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.itemBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itemHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.itemId {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  opacity: 0.35;
+}
+
+.itemTitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.itemDesc {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+.itemTip {
+  display: flex;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 10px 14px;
+  line-height: 1.6;
+}
+
+.tipLabel {
+  color: var(--accent);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+/* 반응형 */
+@media (max-width: 600px) {
+  .item { grid-template-columns: 1fr; }
+  .itemLeft { flex-direction: row; }
+  .inner { padding: 0 20px; }
+}

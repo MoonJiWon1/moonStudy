@@ -1,0 +1,298 @@
+.page {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.header {
+  padding: 60px 0 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.label {
+  font-size: 0.7rem;
+  color: #a78bfa;
+  opacity: 0.6;
+  letter-spacing: 0.2em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* 섹션 */
+.section {
+  padding: 52px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-child {
+  border-bottom: none;
+  padding-bottom: 80px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.sectionNum {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  opacity: 0.35;
+}
+
+/* 기초 카드 */
+.cardRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.basicCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+
+.basicCard:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.basicIcon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.basicTitle {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.basicDesc {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.example {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+/* 토큰 시각화 */
+.tokenViz {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.vizLabel {
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  opacity: 0.4;
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+}
+
+.tokenRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.token {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  border: 1px solid;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+
+.tokenCount {
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  opacity: 0.4;
+  margin-left: 8px;
+  font-family: var(--font-mono);
+}
+
+/* 컨텍스트 윈도우 시각화 */
+.ctxViz {
+  margin-bottom: 28px;
+}
+
+.ctxWindow {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.ctxLabel {
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  opacity: 0.4;
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+}
+
+.ctxBar {
+  display: flex;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  gap: 2px;
+}
+
+.ctxSegment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctxSegLabel {
+  font-size: 0.58rem;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 4px;
+  font-weight: 700;
+}
+
+.ctxLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legendPct {
+  font-family: var(--font-mono);
+  opacity: 0.5;
+}
+
+/* 팁 그리드 */
+.tipGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.tipCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.25s ease;
+  animation: tipIn 0.4s ease both;
+}
+
+@keyframes tipIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tipCard:hover {
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  transform: translateY(-2px);
+}
+
+.tipHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.tipIcon {
+  font-size: 1.3rem;
+}
+
+.tipNum {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  opacity: 0.6;
+}
+
+.tipTitle {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.tipDesc {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* 반응형 */
+@media (max-width: 600px) {
+  .inner { padding: 0 20px; }
+  .ctxSegLabel { display: none; }
+}

@@ -1,0 +1,245 @@
+.page {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* 헤더 */
+.header {
+  padding: 60px 0 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.label {
+  font-size: 0.7rem;
+  color: var(--cyan);
+  opacity: 0.5;
+  letter-spacing: 0.2em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* 탭 */
+.tabs {
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 64px;
+  background: rgba(8, 11, 15, 0.95);
+  backdrop-filter: blur(20px);
+  z-index: 10;
+}
+
+.tabInner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tabInner::-webkit-scrollbar { display: none; }
+
+.tab {
+  padding: 16px 20px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  cursor: none;
+}
+
+.tab:hover {
+  color: var(--accent);
+}
+
+.tab.tabActive {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* 콘텐츠 */
+.content {
+  padding: 48px 0 80px;
+}
+
+.categoryLabel {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 28px;
+  opacity: 0.7;
+}
+
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+/* 스킬 카드 */
+.skillCard {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  overflow: hidden;
+  animation: cardIn 0.4s ease both;
+  transition: all 0.3s ease;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.skillCard:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.skillCard:hover .cardGlow { opacity: 1; }
+
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.skillTag {
+  font-size: 0.62rem;
+  border: 1px solid;
+  padding: 2px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+}
+
+.skillOwner {
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  opacity: 0.5;
+}
+
+.skillName {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.skillDesc {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.installBlock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+
+.installCode {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copyBtn {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--accent);
+  background: none;
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  padding: 3px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+  cursor: none;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.copyBtn:hover {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+/* 더보기 링크 */
+.moreLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border);
+  padding-top: 28px;
+}
+
+.moreDim {
+  color: var(--text-dim);
+  opacity: 0.5;
+}
+
+.moreAnchor {
+  color: var(--cyan);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s;
+}
+
+.moreAnchor:hover { opacity: 0.7; }
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .skillGrid { grid-template-columns: 1fr; }
+  .tabInner { padding: 0 20px; }
+  .inner { padding: 0 20px; }
+}
