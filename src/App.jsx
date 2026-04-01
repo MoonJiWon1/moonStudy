@@ -8,6 +8,7 @@ import Skills from './pages/Skills'
 import HowTo from './pages/HowTo'
 import Caution from './pages/Caution'
 import TokenContext from './pages/TokenContext'
+import DbConnect from './pages/DbConnect'
 
 export default function App() {
   const cursorRef = useRef(null)
@@ -53,6 +54,7 @@ export default function App() {
         <Route path="/caution" element={<Caution />} />
         <Route path="/token-context" element={<TokenContext />} />
         <Route path="/deploy" element={<Deploy />} />
+        <Route path="/db-connect" element={<DbConnect />} />
       </Routes>
     </BrowserRouter>
   )
