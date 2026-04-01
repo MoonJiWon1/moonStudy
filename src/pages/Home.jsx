@@ -69,24 +69,6 @@ const cards = [
   },
   {
     id: '08',
-    path: '/claude-md',
-    label: 'CLAUDE.MD',
-    title: 'CLAUDE.md',
-    desc: 'Claude에게 규칙을 알려주는 설정 파일. 전역/프로젝트 설정 방법.',
-    accent: '#00e5cc',
-    tag: '설정',
-  },
-  {
-    id: '09',
-    path: '/mcp',
-    label: 'MCP',
-    title: 'MCP',
-    desc: 'Claude Code의 플러그인 시스템. GitHub, DB, 웹검색 연결하기.',
-    accent: '#a78bfa',
-    tag: '확장',
-  },
-  {
-    id: '10',
     path: '/example',
     label: 'EXAMPLE',
     title: '실전 예시',
@@ -95,7 +77,7 @@ const cards = [
     tag: '예시',
   },
   {
-    id: '11',
+    id: '09',
     path: '/pricing',
     label: 'PRICING',
     title: '요금 안내',

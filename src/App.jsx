@@ -9,8 +9,6 @@ import HowTo from './pages/HowTo'
 import Caution from './pages/Caution'
 import TokenContext from './pages/TokenContext'
 import DbConnect from './pages/DbConnect'
-import ClaudeMd from './pages/ClaudeMd'
-import MCP from './pages/MCP'
 import Example from './pages/Example'
 import Pricing from './pages/Pricing'
 
@@ -59,8 +57,6 @@ export default function App() {
         <Route path="/token-context" element={<TokenContext />} />
         <Route path="/deploy" element={<Deploy />} />
         <Route path="/db-connect" element={<DbConnect />} />
-        <Route path="/claude-md" element={<ClaudeMd />} />
-        <Route path="/mcp" element={<MCP />} />
         <Route path="/example" element={<Example />} />
         <Route path="/pricing" element={<Pricing />} />
       </Routes>

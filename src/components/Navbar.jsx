@@ -11,8 +11,6 @@ const links = [
   { to: '/token-context', label: '토큰 & 컨텍스트' },
   { to: '/deploy', label: '배포하기' },
   { to: '/db-connect', label: 'DB Connect' },
-  { to: '/claude-md', label: 'CLAUDE.md' },
-  { to: '/mcp', label: 'MCP' },
   { to: '/example', label: '실전 예시' },
   { to: '/pricing', label: '요금' },
 ]

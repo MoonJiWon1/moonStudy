@@ -308,6 +308,482 @@
   .bmadFlowCmd { font-size: 0.62rem; }
 }
 
+/* ── 상단 탭 바 ── */
+.mainTabBar {
+  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.01);
+  position: sticky;
+  top: 72px;
+  z-index: 10;
+}
+
+.mainTabs {
+  display: flex;
+  gap: 0;
+}
+
+.mainTab {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 14px 24px;
+  cursor: none;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.mainTab:hover { color: var(--text); }
+
+.mainTabActive {
+  color: var(--cyan) !important;
+  border-bottom-color: var(--cyan) !important;
+}
+
+/* 탭 콘텐츠 공통 */
+.tabContent {
+  padding: 48px 0 80px;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── CLAUDE.md 탭 ── */
+.mdIntroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.mdIntroCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--cyan);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.mdIntroIcon {
+  font-size: 1.2rem;
+  color: var(--cyan);
+}
+
+.mdIntroCard p {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+.mdIntroCard strong { color: var(--text); }
+
+.mdSection { margin-bottom: 40px; }
+
+.mdSectionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  opacity: 0.4;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.mdTabRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mdTabBtn {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: none;
+  transition: all 0.2s;
+}
+
+.mdTabBtn:hover { border-color: var(--cyan); color: var(--cyan); }
+
+.mdTabActive {
+  border-color: var(--cyan) !important;
+  color: var(--cyan) !important;
+  background: rgba(0,229,204,0.07) !important;
+}
+
+.mdTabContent { animation: fadeIn 0.2s ease; }
+
+.mdTabMeta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.mdTabPath {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--cyan);
+  background: rgba(0,229,204,0.08);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.mdTabDesc {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.mdEssentialGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.mdEssentialCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+  transition: border-color 0.2s;
+}
+
+.mdEssentialCard:hover { border-color: var(--cyan); }
+
+.mdEssentialIcon {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--cyan);
+  margin-bottom: 8px;
+}
+
+.mdEssentialTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.mdEssentialDesc {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.mdTipBox {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--cyan);
+  border-radius: 0 6px 6px 0;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mdTipRow {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.mdTipBullet {
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.mdTipRow p {
+  font-size: 0.79rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+/* ── MCP 탭 ── */
+.mcpIntroGrid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.mcpBaseCard, .mcpExtCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.mcpExtCard {
+  border-color: #a78bfa;
+  background: rgba(167,139,250,0.05);
+}
+
+.mcpBaseCard h3, .mcpExtCard h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 8px 0 12px;
+}
+
+.mcpBaseCard ul, .mcpExtCard ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mcpBaseCard li, .mcpExtCard li {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+  padding-left: 12px;
+  position: relative;
+}
+
+.mcpBaseCard li::before { content: '·'; position: absolute; left: 0; color: var(--text-dim); }
+.mcpExtCard li::before { content: '·'; position: absolute; left: 0; color: #a78bfa; }
+
+.mcpTag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 2px 7px;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+}
+
+.mcpTagAccent {
+  border-color: #a78bfa !important;
+  color: #a78bfa !important;
+}
+
+.mcpDivider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  opacity: 0.5;
+}
+
+.mcpPlus {
+  font-size: 1.4rem;
+  color: #a78bfa;
+  opacity: 1;
+}
+
+.mcpClaim {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mcpClaim span { color: #a78bfa; }
+
+.mcpServerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.mcpServerCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.2s;
+}
+
+.mcpServerCard:hover { border-color: #a78bfa; }
+
+.mcpServerHead { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+.mcpServerTag {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: #a78bfa;
+  border: 1px solid #a78bfa;
+  padding: 1px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+}
+
+.mcpServerName {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.mcpServerDesc {
+  font-size: 0.73rem;
+  color: var(--text-dim);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.mcpInstallRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0d1117;
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin-top: auto;
+}
+
+.mcpInstallRow code {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  flex: 1;
+  word-break: break-all;
+}
+
+.mcpSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mcpStep {
+  display: flex;
+  gap: 20px;
+}
+
+.mcpStepLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.mcpStepNum {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #a78bfa;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #a78bfa;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(167,139,250,0.07);
+}
+
+.mcpStepLine {
+  width: 1px;
+  flex: 1;
+  min-height: 20px;
+  background: rgba(167,139,250,0.25);
+  margin: 4px 0;
+}
+
+.mcpStepRight {
+  padding-bottom: 28px;
+  flex: 1;
+}
+
+.mcpStepTitle {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  margin-top: 4px;
+}
+
+.mcpStepDesc {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.mcpCheckList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mcpCheckRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 5px;
+  background: rgba(167,139,250,0.04);
+  border: 1px solid rgba(167,139,250,0.15);
+}
+
+.mcpCheckNo {
+  background: rgba(255,255,255,0.01);
+  border-color: var(--border);
+}
+
+.mcpCheckYes {
+  color: #a78bfa;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+}
+
+.mcpCheckNoIcon {
+  color: var(--text-dim);
+  opacity: 0.4;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+}
+
+.mcpCheckRow p {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+/* ── 반응형 추가 ── */
+@media (max-width: 768px) {
+  .mainTab { padding: 12px 16px; font-size: 0.72rem; }
+  .mdIntroGrid { grid-template-columns: 1fr; }
+  .mdEssentialGrid { grid-template-columns: repeat(2, 1fr); }
+  .mcpIntroGrid { grid-template-columns: 1fr; }
+  .mcpDivider { flex-direction: row; }
+  .mcpServerGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .mainTab { padding: 10px 12px; font-size: 0.68rem; }
+  .mdEssentialGrid { grid-template-columns: repeat(2, 1fr); }
+  .mcpServerGrid { grid-template-columns: 1fr; }
+  .mdTabMeta { flex-direction: column; align-items: flex-start; gap: 6px; }
+}
+
 /* 본문 레이아웃 */
 .content {
   padding: 48px 0 80px;
