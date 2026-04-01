@@ -1,0 +1,354 @@
+.page {
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* 헤더 */
+.header {
+  padding: 60px 0 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.label {
+  font-size: 0.7rem;
+  color: var(--cyan);
+  opacity: 0.5;
+  letter-spacing: 0.2em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+/* 공통 섹션 */
+.section {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionLabel {
+  font-size: 0.68rem;
+  color: var(--cyan);
+  opacity: 0.5;
+  letter-spacing: 0.2em;
+  margin-bottom: 10px;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+}
+
+/* 섹션 1 — 소개 카드 */
+.introGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.introCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 28px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: border-color 0.2s;
+}
+
+.introCard:hover {
+  border-color: rgba(0, 229, 204, 0.35);
+}
+
+.introIcon {
+  font-size: 1.1rem;
+  color: var(--cyan);
+  flex-shrink: 0;
+  margin-top: 2px;
+  font-family: var(--font-mono);
+}
+
+.introText {
+  font-size: 0.83rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+
+.introText strong {
+  color: var(--text);
+}
+
+/* 섹션 2 — 탭 */
+.tabRow {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+
+.tabBtn {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 12px 20px;
+  transition: all 0.2s;
+  cursor: none;
+  white-space: nowrap;
+}
+
+.tabBtn:hover {
+  color: var(--cyan);
+}
+
+.tabActive {
+  color: var(--cyan) !important;
+  border-bottom-color: var(--cyan) !important;
+}
+
+.tabContent {
+  animation: fadeIn 0.25s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tabMeta {
+  margin-bottom: 20px;
+}
+
+.tabPath {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--cyan);
+  background: rgba(0, 229, 204, 0.08);
+  border: 1px solid rgba(0, 229, 204, 0.2);
+  border-radius: 4px;
+  padding: 4px 10px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.tabDesc {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* 공통 코드 블록 */
+.codeBlock {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.codeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.codeLang {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  opacity: 0.5;
+  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+}
+
+.copyBtn {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--cyan);
+  background: none;
+  border: 1px solid rgba(0, 229, 204, 0.25);
+  padding: 3px 10px;
+  border-radius: 2px;
+  cursor: none;
+  transition: all 0.2s;
+}
+
+.copyBtn:hover {
+  background: rgba(0, 229, 204, 0.08);
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+  padding: 20px;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* 섹션 3 — 필수 항목 그리드 */
+.essentialGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.essentialCard {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  overflow: hidden;
+  animation: cardIn 0.35s ease both;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.essentialCard:hover {
+  border-color: rgba(0, 229, 204, 0.35);
+  transform: translateY(-3px);
+}
+
+.essentialCard:hover .essentialGlow {
+  opacity: 1;
+}
+
+.essentialGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 229, 204, 0.07), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.essentialIcon {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--cyan);
+  display: block;
+  margin-bottom: 14px;
+  opacity: 0.8;
+}
+
+.essentialTitle {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.essentialDesc {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* 섹션 4 — 팁 박스 */
+.tipBox {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--cyan);
+  border-radius: 8px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tipRow {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.tipBullet {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--cyan);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tipText {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+}
+
+/* 반응형 768px */
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 20px;
+  }
+
+  .introGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .essentialGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tabBtn {
+    padding: 10px 14px;
+    font-size: 0.74rem;
+  }
+
+  .tipBox {
+    padding: 22px 24px;
+  }
+}
+
+/* 반응형 480px */
+@media (max-width: 480px) {
+  .essentialGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tabRow {
+    flex-wrap: wrap;
+  }
+
+  .code {
+    font-size: 0.72rem;
+  }
+
+  .tipBox {
+    padding: 18px 20px;
+  }
+}
