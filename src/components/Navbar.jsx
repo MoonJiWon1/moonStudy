@@ -10,7 +10,7 @@ const links = [
   { to: '/caution', label: '주의사항' },
   { to: '/token-context', label: '토큰 & 컨텍스트' },
   { to: '/deploy', label: '배포하기' },
-  { to: '/db-connect', label: 'DB 연결' },
+  { to: '/db-connect', label: 'DB Connect' },
 ]
 
 export default function Navbar() {

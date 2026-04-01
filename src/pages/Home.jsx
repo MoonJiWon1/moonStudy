@@ -58,6 +58,15 @@ const cards = [
     accent: '#39d353',
     tag: '배포',
   },
+  {
+    id: '07',
+    path: '/db-connect',
+    label: 'DB CONNECT',
+    title: 'DB Connect',
+    desc: 'GitHub · Vercel · PostgreSQL 연결 흐름. Supabase, Neon 비교.',
+    accent: '#f59e0b',
+    tag: 'DB',
+  },
 ]
 
 // 타이핑 효과 훅
