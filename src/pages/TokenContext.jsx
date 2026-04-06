@@ -1,4 +1,4 @@
-import { tokenBasics, contextBasics, tips } from '../data/tokenContext'
+import { tokenBasics, contextBasics, tips, models } from '../data/tokenContext'
 import styles from './TokenContext.module.css'
 
 export default function TokenContext() {
@@ -128,6 +128,92 @@ export default function TokenContext() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 모델 가이드 */}
+      <section className={styles.section}>
+        <div className={styles.inner}>
+          <h2 className={styles.sectionTitle}>
+            <span className={styles.sectionNum}>04</span> Claude 모델 가이드
+          </h2>
+          <p className={styles.modelIntro}>
+            같은 Claude지만 모델마다 속도·비용·성능이 다르다.
+            바이브 코딩 작업에 따라 적합한 모델을 선택하면 효율이 달라진다.
+          </p>
+
+          {/* 모델 카드 3개 */}
+          <div className={styles.modelGrid}>
+            {models.map(m => (
+              <div
+                key={m.id}
+                className={`${styles.modelCard} ${m.recommended ? styles.modelCardRecommended : ''}`}
+                style={{ '--model-accent': m.accent }}
+              >
+                {m.recommended && (
+                  <span className={styles.modelBadge}>추천</span>
+                )}
+                <div className={styles.modelHead}>
+                  <span className={styles.modelIcon} style={{ color: m.accent }}>{m.icon}</span>
+                  <div>
+                    <h3 className={styles.modelName}>{m.name}</h3>
+                    <span className={styles.modelVersion}>v{m.version}</span>
+                  </div>
+                  <span className={styles.modelTier} style={{ color: m.tierColor, borderColor: m.tierColor }}>
+                    {m.tier}
+                  </span>
+                </div>
+
+                <p className={styles.modelDesc}>{m.desc}</p>
+
+                {/* 컨텍스트 & 가격 */}
+                <div className={styles.modelStats}>
+                  <div className={styles.modelStat}>
+                    <span className={styles.modelStatLabel}>컨텍스트</span>
+                    <span className={styles.modelStatVal} style={{ color: m.accent }}>{m.context}</span>
+                  </div>
+                  <div className={styles.modelStat}>
+                    <span className={styles.modelStatLabel}>입력</span>
+                    <span className={styles.modelStatVal}>{m.inputPrice}</span>
+                  </div>
+                  <div className={styles.modelStat}>
+                    <span className={styles.modelStatLabel}>출력</span>
+                    <span className={styles.modelStatVal}>{m.outputPrice}</span>
+                  </div>
+                </div>
+                <span className={styles.modelStatUnit}>{m.priceUnit}</span>
+
+                {/* 잘하는 것 */}
+                <div className={styles.modelStrengths}>
+                  {m.strengths.map(s => (
+                    <span key={s} className={styles.modelStrengthTag} style={{ borderColor: m.accent, color: m.accent }}>{s}</span>
+                  ))}
+                </div>
+
+                {/* 바이브 코딩 추천 */}
+                <div className={styles.modelVibe} style={{ borderColor: m.accent }}>
+                  <span className={styles.modelVibeLabel}>바이브 코딩</span>
+                  <p style={{ color: m.accent }}>{m.vibeCoding}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* 컨텍스트 크기 비교 바 */}
+          <div className={styles.ctxCompare}>
+            <p className={styles.ctxCompareLabel}>// 모델별 컨텍스트 윈도우 비교</p>
+            {models.map(m => (
+              <div key={m.id} className={styles.ctxCompareRow}>
+                <span className={styles.ctxCompareName} style={{ color: m.accent }}>{m.name}</span>
+                <div className={styles.ctxCompareBarWrap}>
+                  <div className={styles.ctxCompareBar} style={{ background: m.accent }} />
+                </div>
+                <span className={styles.ctxCompareVal}>{m.context} tokens</span>
+              </div>
+            ))}
+            <p className={styles.ctxCompareNote}>세 모델 모두 200K 컨텍스트 윈도우 지원 — 약 15만 단어, 코드 수천 줄을 한 번에 처리 가능</p>
+          </div>
+
         </div>
       </section>
     </div>

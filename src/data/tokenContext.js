@@ -1,4 +1,57 @@
 // 토큰 & 컨텍스트 설명 데이터
+
+// Claude 모델 비교 데이터
+export const models = [
+  {
+    id: 'claude-opus-4-6',
+    name: 'Claude Opus',
+    version: '4.6',
+    tier: 'POWERFUL',
+    tierColor: '#a78bfa',
+    icon: '◆',
+    desc: '가장 강력한 모델. 복잡한 추론과 장기 프로젝트에 최적화. 속도는 느리지만 품질이 가장 높다.',
+    context: '200K',
+    inputPrice: '$15',
+    outputPrice: '$75',
+    priceUnit: '/ 1M tokens',
+    strengths: ['복잡한 아키텍처 설계', '장문 코드 분석', '까다로운 버그 해결'],
+    vibeCoding: '복잡한 설계 단계에만 선택적으로',
+    accent: '#a78bfa',
+  },
+  {
+    id: 'claude-sonnet-4-6',
+    name: 'Claude Sonnet',
+    version: '4.6',
+    tier: 'RECOMMENDED',
+    tierColor: '#00e5cc',
+    icon: '◈',
+    desc: '속도와 성능의 최적 균형. 바이브 코딩 일상 작업에 가장 적합하고 비용 대비 효율이 뛰어나다.',
+    context: '200K',
+    inputPrice: '$3',
+    outputPrice: '$15',
+    priceUnit: '/ 1M tokens',
+    strengths: ['기능 구현', '코드 리뷰', '리팩터링', 'BMAD 기획'],
+    vibeCoding: '바이브 코딩 기본 모델 — 대부분의 작업에 최적',
+    accent: '#00e5cc',
+    recommended: true,
+  },
+  {
+    id: 'claude-haiku-4-5',
+    name: 'Claude Haiku',
+    version: '4.5',
+    tier: 'FAST',
+    tierColor: '#39d353',
+    icon: '◇',
+    desc: '가장 빠르고 저렴한 모델. 단순 질문, 빠른 수정, 비용을 아껴야 할 때 적합하다.',
+    context: '200K',
+    inputPrice: '$0.80',
+    outputPrice: '$4',
+    priceUnit: '/ 1M tokens',
+    strengths: ['빠른 질문 응답', '단순 코드 수정', '문서 요약'],
+    vibeCoding: '가벼운 작업·비용 절약이 우선일 때',
+    accent: '#39d353',
+  },
+]
 export const tokenBasics = [
   {
     icon: '🪙',
